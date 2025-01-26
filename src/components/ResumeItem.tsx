@@ -23,9 +23,9 @@ export default function ResumeItem({
                   </div>
                 </div>
                 <div>
-                  <div className="text-sky-500 text-sm font-bold mt-1">
+                  <h3 className="text-sky-500 text-sm font-bold mt-1">
                     {name}
-                  </div>
+                  </h3>
                 </div>
                 <div className="flex mt-1">
                   <span className="text-xs flex flex-align-center cursor-pointer flex-row flex-wrap gap-1">
@@ -54,7 +54,7 @@ export default function ResumeItem({
       </div>
     </div>
     <div className="mx-2 group-last:invisible">
-      <div className="h-px border-b border-dashed border-slate-500" />
+      <div className="h-px border-b border-dashed border-slate-300" />
     </div>
   </div>;
 }
