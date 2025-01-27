@@ -1,21 +1,61 @@
-import AtSymbolIcon from "@/components/AtSymbolIcon";
-import CourseItem from "@/components/CourseItem";
-import LanguageItem from "@/components/LanguageItem";
-import LocationIcon from "@/components/LocationIcon";
-import PhoneIcon from "@/components/PhoneIcon";
-import ResumeItem from "@/components/ResumeItem";
-import SectionName from "@/components/SectionName";
+import AtSymbolIcon from "@/components/resume/icons/AtSymbolIcon";
+import CourseItem from "@/components/resume/CourseItem";
+import LanguageItem from "@/components/resume/LanguageItem";
+import LocationIcon from "@/components/resume/icons/LocationIcon";
+import PhoneIcon from "@/components/resume/icons/PhoneIcon";
+import ResumeItem from "@/components/resume/ResumeItem";
+import SectionName from "@/components/resume/SectionName";
+import Skills from "@/components/resume/Skills";
+
+const jobs = [
+  {
+    title: "Software Engineer",
+    name: "Yolo Group",
+    link: "https://yolo.com/",
+    dates: "01/2022 - 12/2024",
+    location: "Tallinn, Estonia",
+    points: [
+      "Collaborated with 5+ cross-functional teams, including QA, design, DevOps, and adjacent development teams, to deliver seamless and performant solutions",
+      "Developed a Web3 authentication module, integrating MetaMask and WalletConnect to streamline user login and ensure decentralised access",
+      "Optimised page load times by 20% through migrating from styled-components to Tailwind",
+      "Contributed to creating and enhancing an open-source UI library with reusable components",
+    ],
+  },
+  {
+    title: "Lead Frontend Developer",
+    name: "T1 Consulting",
+    link: "https://www.t1-consulting.ru/",
+    dates: "07/2019 - 11/2021",
+    location: "Remote",
+    points: [
+      "Led the development of a web application from scratch, including architecture design, implementation, and deployment",
+      "Built a scalable and reusable UI kit using Storybook, improving development efficiency and ensuring consistent design across projects",
+      "Optimised application performance by migrating from Vue.js to Nuxt.js, utilising server-side rendering to reduce initial load times by 30% and improve SEO",
+    ],
+  },
+  {
+    title: "Front-end developer",
+    name: "Tabtrader",
+    link: "https://tabtrader.com/",
+    dates: "09/2017 - 06/2019",
+    location: "St. Petersburg, Russia",
+    points: [
+      "Developed a cryptocurrency exchange, providing real-time data visualisation",
+      "Implemented a Progressive Web App (PWA) with Service Worker integration to enable offline capabilities",
+    ],
+  },
+];
 
 export default function MyCV() {
   return (
-    <div className="font-medium font-sans whitespace-pre-wrap max-w-xl m-auto">
+    <div className="font-medium font-[family-name:var(--font-geist-sans)] whitespace-pre-wrap max-w-2xl m-auto pt-12">
       <div className="relative z-2">
         <div className="flex flex-nowrap justify-between my-2 mx-3">
           <div className="w-full pr-3">
-            <div className="whitespace-pre-wrap pb-1 font-medium font-sans uppercase text-4xl">
+            <div className="pb-1 font-medium uppercase text-2xl">
               SVETLANA SEMENOVA
             </div>
-            <h1 className="w-full whitespace-pre-wrap pb-1 font-medium font-sans text-sky-500 text-lg">
+            <h1 className="w-full pb-1 font-medium text-sky-500 text-lg">
               Senior Frontend Engineer
             </h1>
             <div className="flex mt-2 gap-1">
@@ -80,59 +120,18 @@ export default function MyCV() {
       <div className="auto-cols-[1fr_40%] gap-3 grid-flow-col grid">
         <div>
           <div className="mb-3">
+            <SectionName name="Summary" />
+            <div className="text-xs pt-2 px-3">
+              A passionate full-stack developer with over 6 years of experience,
+              specialising in front-end development.
+            </div>
+          </div>
+          <div className="mb-3">
             <SectionName />
             <div className="grid grid-cols-1">
-              <ResumeItem>
-                <ul className="mt-3">
-                  <li className="flex flex-nowrap text-xs gap-1">
-                    <span className="text-xs">•</span>
-                    <div>
-                      <div className="text-xs">
-                        Collaborated with the team to develop new features and
-                        improve the user experience
-                      </div>
-                    </div>
-                  </li>
-                  <li className="flex flex-nowrap text-xs gap-1">
-                    <span className="text-xs">•</span>
-                    <div>
-                      <div className="text-xs">
-                        Developed a Web3 authentication module, integrating
-                        MetaMask and WalletConnect to streamline user login and
-                        ensure decentralised access
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </ResumeItem>
-              <ResumeItem
-                title="Lead Frontend Developer"
-                name="Technoserv Consulting"
-                dates="07/2019 - 11/2021"
-                location="Remote"
-              >
-                <ul className="mt-3">
-                  <li className="flex flex-nowrap text-xs gap-1">
-                    <span className="text-xs">•</span>
-                    <div>
-                      <div className="text-xs">
-                        Collaborated with the team to develop new features and
-                        improve the user experience
-                      </div>
-                    </div>
-                  </li>
-                  <li className="flex flex-nowrap text-xs gap-1">
-                    <span className="text-xs">•</span>
-                    <div>
-                      <div className="text-xs">
-                        Developed a Web3 authentication module, integrating
-                        MetaMask and WalletConnect to streamline user login and
-                        ensure decentralised access
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </ResumeItem>
+              {jobs.map((job) => (
+                <ResumeItem key={job.dates} {...job} />
+              ))}
             </div>
           </div>
           <div className="mb-3">
@@ -141,6 +140,7 @@ export default function MyCV() {
               <ResumeItem
                 title="Bachelor of Mathematics and Computer Science"
                 name="Dostoevsky Omsk State University"
+                link="https://omsu.ru/"
                 dates="01/2013 - 01/2017"
                 location="Omsk, Russia"
               />
@@ -149,16 +149,19 @@ export default function MyCV() {
         </div>
         <div>
           <div className="mb-3">
-            <SectionName name="Summary" />
-            <div className="text-xs pt-2 px-3">
-              A passionate full-stack developer with 6+ years of experience,
-              specialising in front-end development.
+            <SectionName name="Skills" />
+            <div className="px-3 py-2">
+              <div className="flex flex-wrap flex-row gap-2">
+                <Skills />
+              </div>
             </div>
           </div>
           <div className="mb-3">
             <SectionName name="Training / Courses" />
-            <CourseItem />
-            <CourseItem courseTitle="JavaScript development of web-interfaces" />
+            <CourseItem
+              institution="7bits | IT-lift by 7bits"
+              institutionLink="https://courses.itlft.ru/development"
+            />
           </div>
           <div className="mb-3">
             <SectionName name="Languages" />
@@ -168,19 +171,6 @@ export default function MyCV() {
               levelName="Native"
               levelNumber={5}
             />
-          </div>
-          <div className="mb-3">
-            <SectionName name="Skills" />
-            <div className="px-3 py-2">
-              <div className="flex flex-wrap flex-row gap-2">
-                <span className="text-sm inline-flex font-bold border-b border-solid border-slate-300 px-2 py-1">
-                  CSS
-                </span>
-                <span className="text-sm inline-flex font-bold border-b border-solid border-slate-300 px-2 py-1">
-                  HTML
-                </span>
-              </div>
-            </div>
           </div>
         </div>
       </div>

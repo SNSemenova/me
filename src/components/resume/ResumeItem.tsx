@@ -1,13 +1,24 @@
-import CalendarIcon from "./CalendarIcon";
-import LocationIcon from "./LocationIcon";
+import CalendarIcon from "./icons/CalendarIcon";
+import LocationIcon from "./icons/LocationIcon";
+import Points from "./Points";
+
+type Props = {
+  title?: string;
+  name?: string;
+  dates?: string;
+  location?: string;
+  link?: string;
+  points?: string[];
+};
 
 export default function ResumeItem({
-  title = "Software Engineer",
-  name = "Yolo Group",
-  dates = "01/2022 - 01/2024",
-  location = "Tallinn, Estonia",
-  children = <></>,
-}) {
+  title,
+  name,
+  dates,
+  location,
+  link,
+  points = [],
+}: Props) {
   return (
     <div className="flex flex-col justify-between group">
       <div>
@@ -21,13 +32,13 @@ export default function ResumeItem({
                       <div className="text-base">{title}</div>
                     </div>
                   </div>
-                  <div>
-                    <h3 className="text-sky-500 text-sm font-bold mt-1">
+                  <a href={link} target="_blank">
+                    <h3 className="text-sky-500 text-sm font-bold mt-1 hover:underline hover:underline-offset-4">
                       {name}
                     </h3>
-                  </div>
+                  </a>
                   <div className="flex mt-1">
-                    <span className="text-xs flex flex-align-center cursor-pointer flex-row flex-wrap gap-1">
+                    <span className="text-xs flex flex-align-center flex-row flex-wrap gap-1">
                       <CalendarIcon />
                       <span className="text-xs pr-2">
                         <span>{dates}</span>
@@ -41,7 +52,7 @@ export default function ResumeItem({
                       </div>
                     </div>
                   </div>
-                  {children}
+                  <Points points={points} />
                 </div>
               </div>
             </div>

@@ -8,7 +8,7 @@ export default function LanguageItem({
     levelNumber - level > 0 ? "bg-sky-500" : "bg-slate-300";
 
   return (
-    <div className="px-3 py-2">
+    <div className="px-3 py-1">
       <div className="flex justify-between items-center">
         <div className="mr-2">
           <div className="text-sm pr-2 font-bold">{language}</div>
