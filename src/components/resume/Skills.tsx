@@ -24,7 +24,7 @@ export default function Skills() {
       {skills[category].map((skill) => (
         <span
           key={skill}
-          className="text-sm inline-flex font-bold border-b border-solid border-slate-300 mr-2"
+          className="text-sm inline-flex font-bold mr-2 underline underline-offset-4"
         >
           {skill}
         </span>

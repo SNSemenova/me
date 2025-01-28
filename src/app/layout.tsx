@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import NavigationItem from "@/components/NavigationItem";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,8 +26,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[url(/large-triangles.svg)]`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[url(/large-triangles.svg)] min-h-screen grid grid-rows-[64px_1fr] justify-stretch print:flex print:min-h-0`}
       >
+        <header className="bg-sky-500/20 px-1 sm:px-10 py-3 print:hidden">
+          <nav>
+            <ul className="flex gap-4">
+              <li>
+                <NavigationItem name="Home" href="/" />
+              </li>
+              <li>
+                <NavigationItem name="CV" href="/cv" />
+              </li>
+            </ul>
+          </nav>
+        </header>
         {children}
       </body>
     </html>

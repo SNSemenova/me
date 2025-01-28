@@ -41,7 +41,7 @@ export default function ResumeItem({
                     <span className="text-xs flex flex-align-center flex-row flex-wrap gap-1">
                       <CalendarIcon />
                       <span className="text-xs pr-2">
-                        <span>{dates}</span>
+                        <span className="whitespace-nowrap">{dates}</span>
                         <span className="w-2 inline-block">&nbsp;</span>
                       </span>
                     </span>

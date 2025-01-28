@@ -48,7 +48,7 @@ const jobs = [
 
 export default function MyCV() {
   return (
-    <div className="font-medium font-[family-name:var(--font-geist-sans)] whitespace-pre-wrap max-w-2xl m-auto pt-12">
+    <div className="font-medium font-[family-name:var(--font-geist-sans)] whitespace-pre-wrap max-w-2xl m-auto pt-4 px-3 mb-4 sm:mb-0 sm:pt-12 print:px-0">
       <div className="relative z-2">
         <div className="flex flex-nowrap justify-between my-2 mx-3">
           <div className="w-full pr-3">
@@ -56,9 +56,9 @@ export default function MyCV() {
               SVETLANA SEMENOVA
             </div>
             <h1 className="w-full pb-1 font-medium text-sky-500 text-lg">
-              Senior Frontend Engineer
+              Frontend Engineer
             </h1>
-            <div className="flex mt-2 gap-1">
+            <div className="flex flex-col sm:flex-row mt-2 gap-1">
               <div className="flex flex-col gap-1 justify-between">
                 <div className="flex items-center flex-nowrap pb-1/2 text-xs h-3 gap-1">
                   <PhoneIcon />
@@ -67,7 +67,7 @@ export default function MyCV() {
                       href="tel:+37253913081"
                       className="whitespace-pre-wrap font-sans text-xs pr-3 flex font-bold"
                     >
-                      +372 5391 3081
+                      +372&nbsp;5391&nbsp;3081
                     </a>
                   </div>
                 </div>
@@ -117,7 +117,7 @@ export default function MyCV() {
           </div>
         </div>
       </div>
-      <div className="auto-cols-[1fr_40%] gap-3 grid-flow-col grid">
+      <div className="grid-flow-row auto-cols-[1fr_40%] gap-3 sm:grid-flow-col grid">
         <div>
           <div className="mb-3">
             <SectionName name="Summary" />
