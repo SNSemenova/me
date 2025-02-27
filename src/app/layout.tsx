@@ -37,6 +37,9 @@ export default function RootLayout({
               <li>
                 <NavigationItem name="CV" href="/cv" />
               </li>
+              <li>
+                <NavigationItem name="Projects" href="/projects" />
+              </li>
             </ul>
           </nav>
         </header>
