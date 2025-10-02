@@ -12,12 +12,13 @@ const jobs = [
     title: "Software Engineer",
     name: "Yolo Group",
     link: "https://yolo.com/",
-    dates: "01/2022 - 12/2024",
+    dates: "01/2022 - Present",
     location: "Tallinn, Estonia",
     points: [
+      "Took ownership of critical front-end functionality, driving development from planning to release",
       "Collaborated with 5+ cross-functional teams, including QA, design, DevOps, and adjacent development teams, to deliver seamless and performant solutions",
       "Developed a Web3 authentication module, integrating MetaMask and WalletConnect to streamline user login and ensure decentralised access",
-      "Optimised page load times by 20% through migrating from styled-components to Tailwind",
+      // "Optimised page load times by 20% through migrating from styled-components to Tailwind",
       "Contributed to creating and enhancing an open-source UI library with reusable components",
     ],
   },
@@ -122,7 +123,7 @@ export default function MyCV() {
           <div className="mb-3">
             <SectionName name="Summary" />
             <div className="text-xs pt-2 px-3">
-              A passionate full-stack developer with over 6 years of experience,
+              A passionate full-stack developer with over 7 years of experience,
               specialising in front-end development.
             </div>
           </div>
